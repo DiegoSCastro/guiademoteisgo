@@ -20,6 +20,14 @@ class ThemeConfig {
     ),
     colorScheme: const ColorScheme.light(
       primary: AppColors.primary,
+      surface: AppColors.backgroundLight,
+      surfaceContainerLow: AppColors.gray,
+      surfaceContainerHighest: AppColors.darkestGray,
     ),
+    scaffoldBackgroundColor: AppColors.backgroundLight,
+    cardColor: AppColors.white,
+    primaryColorDark: AppColors.primaryDark,
+    primaryColorLight: AppColors.primaryLight,
+    dividerTheme: const DividerThemeData(color: AppColors.gray),
   );
 }
