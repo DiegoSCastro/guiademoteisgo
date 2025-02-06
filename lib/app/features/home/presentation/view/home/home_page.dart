@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:guiademoteisgo/app/app.dart';
 
 enum HomeSegment {
   goNow,
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _selectedSegment = widget.state.uri.path == '/go_now'
+    _selectedSegment = widget.state.uri.path == AppRoutes.goNowPath
         ? HomeSegment.goNow
         : HomeSegment.goLater;
   }
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: SegmentedButton(
           segments: const [
             ButtonSegment(
@@ -49,7 +51,6 @@ class _HomePageState extends State<HomePage> {
           onSelectionChanged: (Set<HomeSegment> newSelection) {
             setState(() {
               _selectedSegment = newSelection.first;
-              // Navega para a rota correspondente ao segmento selecionado
               switch (_selectedSegment) {
                 case HomeSegment.goNow:
                   context.go('/go_now');

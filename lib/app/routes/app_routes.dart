@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:guiademoteisgo/app/app.dart';
-import 'package:guiademoteisgo/app/features/home/presentation/view/home/home_page.dart';
 
 sealed class AppRoutes {
   static const splashPath = '/splash';
+  static const goNowPath = '/go_now';
+  static const goLaterPath = '/go_later';
 
-  final GoRouter router = GoRouter(
+  static GoRouter router = GoRouter(
     initialLocation: splashPath,
     routes: [
       GoRoute(

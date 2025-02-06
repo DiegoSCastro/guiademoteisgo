@@ -5,11 +5,8 @@ class GoLaterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('go_later_page'),
-      ),
-      body: Container(),
+    return const Center(
+      child: Text('go_later'),
     );
   }
 }

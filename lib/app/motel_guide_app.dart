@@ -7,11 +7,11 @@ class MotelGuideApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Guia de Moteis Go',
       debugShowCheckedModeBanner: false,
       theme: ThemeConfig.theme,
-      home: const SplashPage(),
+      routerConfig: AppRoutes.router,
     );
   }
 }

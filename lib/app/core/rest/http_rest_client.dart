@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:guiademoteisgo/app/app.dart';
 import 'package:http/http.dart' as http;
 
@@ -43,11 +44,15 @@ class HttpRestClient implements RestClient {
     return _handleResponse(response);
   }
 
-  dynamic _handleResponse(http.Response response) {
+  Map<String, dynamic> _handleResponse(http.Response response) {
     if (response.statusCode >= 200 && response.statusCode < 300) {
-      return jsonDecode(response.body);
+      final utf8Body = utf8.decode(response.bodyBytes);
+      return jsonDecode(utf8Body) as Map<String, dynamic>;
     } else {
-      throw Exception('Failed to load data: ${response.statusCode}');
+      throw HttpException(
+        'Failed to load data: ${response.statusCode}',
+        uri: response.request?.url,
+      );
     }
   }
 }
