@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:guiademoteisgo/app/app.dart';
 
-enum HomeSegment {
-  goNow,
-  goLater,
-}
-
 class HomePage extends StatefulWidget {
   const HomePage({
     required this.child,
@@ -21,46 +16,40 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late HomeSegment _selectedSegment;
-
   @override
   void initState() {
     super.initState();
-    _selectedSegment = widget.state.uri.path == AppRoutes.goNowPath
-        ? HomeSegment.goNow
-        : HomeSegment.goLater;
   }
+
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       appBar: AppBar(
         centerTitle: true,
-        title: SegmentedButton(
-          segments: const [
-            ButtonSegment(
-              value: HomeSegment.goNow,
-              label: Text('Go Now'),
-            ),
-            ButtonSegment(
-              value: HomeSegment.goLater,
-              label: Text('Go Later'),
-            ),
-          ],
-          selected: {_selectedSegment},
-          onSelectionChanged: (Set<HomeSegment> newSelection) {
-            setState(() {
-              _selectedSegment = newSelection.first;
-              switch (_selectedSegment) {
-                case HomeSegment.goNow:
-                  context.go('/go_now');
-                case HomeSegment.goLater:
-                  context.go('/go_later');
-              }
-            });
-          },
+        leading: IconButton(
+          onPressed: _key.currentState?.openDrawer,
+          icon: Icon(
+            Icons.menu_rounded,
+            color: context.theme.cardColor,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search_rounded),
+          ),
+        ],
+        title: AppSegmentedButton(
+          onTapNow: () => context.go(AppRoutes.goNowPath),
+          onTapLater: () => context.go(AppRoutes.goLaterPath),
         ),
       ),
+      drawer: const Drawer(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: MapFAB(onTap: () => AppSnackbar.pending(context)),
       body: widget.child,
     );
   }

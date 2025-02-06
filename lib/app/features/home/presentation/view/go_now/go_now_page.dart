@@ -24,7 +24,17 @@ class _GoNowPageState extends State<GoNowPage> {
       child: BlocBuilder<GoNowCubit, GoNowState>(
         builder: (context, state) => switch (state) {
           GoNowLoaded(:final motelData) => Column(
-              children: motelData.motels.map(MotelItem.new).toList(),
+              children: [
+                const FilterRow(),
+                const Divider(height: 1),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: motelData.motels.map(MotelItem.new).toList(),
+                    ),
+                  ),
+                ),
+              ],
             ),
           _ => const Center(
               child: CircularProgressIndicator(),

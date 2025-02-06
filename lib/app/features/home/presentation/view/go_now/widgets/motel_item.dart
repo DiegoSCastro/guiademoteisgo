@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:guiademoteisgo/app/app.dart';
 
@@ -8,9 +9,15 @@ class MotelItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.only(
+            right: 24,
+            left: 24,
+            top: 24,
+            bottom: 16,
+          ),
           child: Row(
             spacing: 16,
             children: [
@@ -20,7 +27,7 @@ class MotelItem extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: NetworkImage(motel.logo),
+                      image: CachedNetworkImageProvider(motel.logo),
                     ),
                   ),
                 ),
@@ -29,21 +36,40 @@ class MotelItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(motel.name),
-                    Row(
-                      children: [
-                        Text('${motel.distance}km - '),
-                        Text(motel.neighborhood),
-                      ],
+                    Text(
+                      motel.name,
+                      style: context.textTheme.headlineSmall,
+                    ),
+                    Text(
+                      '${motel.distance}km - ${motel.neighborhood}',
+                      style: context.textTheme.bodyMedium?.copyWith(
+                        color: context.colorScheme.surfaceContainerHighest,
+                      ),
                     ),
                   ],
                 ),
               ),
-              const Icon(Icons.favorite),
+              Icon(
+                Icons.favorite,
+                color: context.colorScheme.surfaceContainerLow,
+                size: 32,
+              ),
             ],
           ),
         ),
-        Image.network(motel.suites.first.photos.first),
+        SizedBox(
+          height: 650,
+          child: PageView.builder(
+            controller: PageController(viewportFraction: 0.9),
+            itemCount: motel.suites.length,
+            itemBuilder: (context, index) {
+              final suite = motel.suites[index];
+              return SuitePageviewItem(
+                suite: suite,
+              );
+            },
+          ),
+        ),
       ],
     );
   }
