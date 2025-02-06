@@ -14,8 +14,9 @@ _$MotelDataModelImpl _$$MotelDataModelImplFromJson(Map<String, dynamic> json) =>
       totalMotels: (json['totalMoteis'] as num).toInt(),
       radius: (json['raio'] as num).toDouble(),
       maxPages: (json['maxPaginas'] as num).toInt(),
-      motels:
-          (json['moteis'] as List<dynamic>).map((e) => e as String).toList(),
+      motels: (json['moteis'] as List<dynamic>)
+          .map((e) => MotelModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$MotelDataModelImplToJson(

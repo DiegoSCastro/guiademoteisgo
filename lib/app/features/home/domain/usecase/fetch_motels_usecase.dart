@@ -1,12 +1,12 @@
 import 'package:fpdart/fpdart.dart';
 import 'package:guiademoteisgo/app/app.dart';
 
-abstract interface class ContainsImageUrlUsecase {
+abstract interface class FetchMotelsUsecase {
   Future<Either<Exception, MotelData>> call();
 }
 
-class ContainsImageUrlUsecaseImpl implements ContainsImageUrlUsecase {
-  ContainsImageUrlUsecaseImpl({required HomeRepository repository})
+class FetchMotelsUsecaseImpl implements FetchMotelsUsecase {
+  FetchMotelsUsecaseImpl({required HomeRepository repository})
       : _repository = repository;
 
   final HomeRepository _repository;

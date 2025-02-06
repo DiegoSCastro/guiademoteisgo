@@ -7,7 +7,7 @@ class HomeRemoteDatasourceImpl implements HomeRemoteDatasource {
 
   @override
   Future<MotelResponseModel> fetchMotels() async {
-    const apiUrl = '${AppEnv.baseUrl}/random.json';
+    const apiUrl = '${AppEnv.baseUrl}/b/1IXK';
     final response = await _restClient.get(apiUrl);
     return MotelResponseModel.fromJson(response);
   }

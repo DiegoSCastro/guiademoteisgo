@@ -33,7 +33,7 @@ mixin _$MotelDataModel {
   @JsonKey(name: 'maxPaginas')
   int get maxPages => throw _privateConstructorUsedError;
   @JsonKey(name: 'moteis')
-  List<String> get motels => throw _privateConstructorUsedError;
+  List<MotelModel> get motels => throw _privateConstructorUsedError;
 
   /// Serializes this MotelDataModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ abstract class $MotelDataModelCopyWith<$Res> {
       @JsonKey(name: 'totalMoteis') int totalMotels,
       @JsonKey(name: 'raio') double radius,
       @JsonKey(name: 'maxPaginas') int maxPages,
-      @JsonKey(name: 'moteis') List<String> motels});
+      @JsonKey(name: 'moteis') List<MotelModel> motels});
 }
 
 /// @nodoc
@@ -112,7 +112,7 @@ class _$MotelDataModelCopyWithImpl<$Res, $Val extends MotelDataModel>
       motels: null == motels
           ? _value.motels
           : motels // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<MotelModel>,
     ) as $Val);
   }
 }
@@ -132,7 +132,7 @@ abstract class _$$MotelDataModelImplCopyWith<$Res>
       @JsonKey(name: 'totalMoteis') int totalMotels,
       @JsonKey(name: 'raio') double radius,
       @JsonKey(name: 'maxPaginas') int maxPages,
-      @JsonKey(name: 'moteis') List<String> motels});
+      @JsonKey(name: 'moteis') List<MotelModel> motels});
 }
 
 /// @nodoc
@@ -184,7 +184,7 @@ class __$$MotelDataModelImplCopyWithImpl<$Res>
       motels: null == motels
           ? _value._motels
           : motels // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<MotelModel>,
     ));
   }
 }
@@ -199,7 +199,7 @@ class _$MotelDataModelImpl extends _MotelDataModel {
       @JsonKey(name: 'totalMoteis') required this.totalMotels,
       @JsonKey(name: 'raio') required this.radius,
       @JsonKey(name: 'maxPaginas') required this.maxPages,
-      @JsonKey(name: 'moteis') required final List<String> motels})
+      @JsonKey(name: 'moteis') required final List<MotelModel> motels})
       : _motels = motels,
         super._();
 
@@ -224,10 +224,10 @@ class _$MotelDataModelImpl extends _MotelDataModel {
   @override
   @JsonKey(name: 'maxPaginas')
   final int maxPages;
-  final List<String> _motels;
+  final List<MotelModel> _motels;
   @override
   @JsonKey(name: 'moteis')
-  List<String> get motels {
+  List<MotelModel> get motels {
     if (_motels is EqualUnmodifiableListView) return _motels;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_motels);
@@ -293,7 +293,7 @@ abstract class _MotelDataModel extends MotelDataModel {
           @JsonKey(name: 'totalMoteis') required final int totalMotels,
           @JsonKey(name: 'raio') required final double radius,
           @JsonKey(name: 'maxPaginas') required final int maxPages,
-          @JsonKey(name: 'moteis') required final List<String> motels}) =
+          @JsonKey(name: 'moteis') required final List<MotelModel> motels}) =
       _$MotelDataModelImpl;
   const _MotelDataModel._() : super._();
 
@@ -320,7 +320,7 @@ abstract class _MotelDataModel extends MotelDataModel {
   int get maxPages;
   @override
   @JsonKey(name: 'moteis')
-  List<String> get motels;
+  List<MotelModel> get motels;
 
   /// Create a copy of MotelDataModel
   /// with the given fields replaced by the non-null parameter values.

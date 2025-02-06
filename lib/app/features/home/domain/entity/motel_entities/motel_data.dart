@@ -1,3 +1,5 @@
+import 'package:guiademoteisgo/app/app.dart';
+
 class MotelData {
   MotelData({
     required this.page,
@@ -15,5 +17,5 @@ class MotelData {
   final int totalMotels;
   final double radius;
   final int maxPages;
-  final List<String> motels;
+  final List<Motel> motels;
 }

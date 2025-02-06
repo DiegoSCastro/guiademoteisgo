@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:guiademoteisgo/app/features/home/domain/entity/motel/motel_data.dart';
+import 'package:guiademoteisgo/app/app.dart';
 
 part 'motel_data_model.freezed.dart';
 part 'motel_data_model.g.dart';
@@ -15,7 +15,7 @@ class MotelDataModel with _$MotelDataModel {
     @JsonKey(name: 'totalMoteis') required int totalMotels,
     @JsonKey(name: 'raio') required double radius,
     @JsonKey(name: 'maxPaginas') required int maxPages,
-    @JsonKey(name: 'moteis') required List<String> motels,
+    @JsonKey(name: 'moteis') required List<MotelModel> motels,
   }) = _MotelDataModel;
   const MotelDataModel._();
 
@@ -30,6 +30,6 @@ class MotelDataModel with _$MotelDataModel {
         totalMotels: totalMotels,
         radius: radius,
         maxPages: maxPages,
-        motels: motels,
+        motels: motels.map((motel) => motel.toEntity).toList(),
       );
 }
