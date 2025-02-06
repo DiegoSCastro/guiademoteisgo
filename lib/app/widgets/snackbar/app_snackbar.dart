@@ -91,5 +91,5 @@ class AppSnackbar {
   }
 
   static void pending(BuildContext context) =>
-      info(context, message: 'Em desenvolvimento');
+      warning(context, message: 'Em desenvolvimento');
 }

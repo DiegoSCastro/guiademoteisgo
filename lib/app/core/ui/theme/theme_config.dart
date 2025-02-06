@@ -29,5 +29,8 @@ class ThemeConfig {
     primaryColorDark: AppColors.primaryDark,
     primaryColorLight: AppColors.primaryLight,
     dividerTheme: const DividerThemeData(color: AppColors.gray),
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: AppColors.backgroundLight,
+    ),
   );
 }

@@ -29,16 +29,13 @@ class _HomePageState extends State<HomePage> {
       key: _key,
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          onPressed: _key.currentState?.openDrawer,
-          icon: Icon(
-            Icons.menu_rounded,
-            color: context.theme.cardColor,
-          ),
+        leading: DrawerButton(
+          onPressed: () => _key.currentState?.openDrawer(),
+          color: context.theme.cardColor,
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () => AppSnackbar.pending(context),
             icon: const Icon(Icons.search_rounded),
           ),
         ],
@@ -47,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           onTapLater: () => context.go(AppRoutes.goLaterPath),
         ),
       ),
-      drawer: const Drawer(),
+      drawer: const AppDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: MapFAB(onTap: () => AppSnackbar.pending(context)),
       body: widget.child,

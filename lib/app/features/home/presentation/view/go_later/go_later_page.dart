@@ -6,7 +6,13 @@ class GoLaterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('go_later'),
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 80),
+        child: Text(
+          'Em breve você poderá fazer agendamentos',
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }
