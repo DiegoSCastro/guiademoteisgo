@@ -28,6 +28,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       key: _key,
       appBar: AppBar(
+        backgroundColor: context.colorScheme.primary,
+        foregroundColor: context.theme.cardColor,
         centerTitle: true,
         leading: DrawerButton(
           onPressed: () => _key.currentState?.openDrawer(),

@@ -1,2 +1,2 @@
 export 'context_extension.dart';
-export 'string_extensions.dart';
+export 'double_extension.dart';

@@ -60,7 +60,7 @@ class AppDrawer extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    'acumule selinhos e troque por reservas grátis. vale em todos os motéis e horários',
+                    'acumule selinhos e troque por reservas grátis. vale em todos os motéis e horários!',
                     style: context.textTheme.labelSmall
                         ?.copyWith(color: context.theme.cardColor),
                   ),
@@ -123,12 +123,12 @@ class _DrawerOptionButton extends StatelessWidget {
               Expanded(
                 child: Text(
                   label,
-                  style: context.textTheme.bodyLarge,
+                  style: context.textTheme.bodyMedium,
                 ),
               ),
               const Icon(
                 Icons.arrow_forward_ios_rounded,
-                size: 16,
+                size: 12,
               ),
             ],
           ),

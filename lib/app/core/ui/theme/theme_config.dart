@@ -15,8 +15,9 @@ class ThemeConfig {
       ),
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.primary,
-      foregroundColor: AppColors.white,
+      backgroundColor: AppColors.white,
+      foregroundColor: AppColors.darkestGray,
+      surfaceTintColor: Colors.transparent,
     ),
     colorScheme: const ColorScheme.light(
       primary: AppColors.primary,

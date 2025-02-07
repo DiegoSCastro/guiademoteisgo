@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:guiademoteisgo/app/app.dart';
-import 'package:guiademoteisgo/app/core/extensions/double_extension.dart';
 
 class SuitePageviewItem extends StatelessWidget {
   const SuitePageviewItem({
@@ -20,13 +20,22 @@ class SuitePageviewItem extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(6),
-                child: CachedNetworkImage(
-                  imageUrl: suite.photos.first,
-                  height: 250,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () => context.push(
+                  AppRoutes.multiImageViewPath,
+                  extra: suite,
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(6),
+                  child: Hero(
+                    tag: suite.photos.first,
+                    child: CachedNetworkImage(
+                      imageUrl: suite.photos.first,
+                      height: 250,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(height: 12),

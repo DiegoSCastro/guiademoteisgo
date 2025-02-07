@@ -6,6 +6,9 @@ class MotelItem extends StatelessWidget {
   const MotelItem(this.motel, {super.key});
   final Motel motel;
 
+  String get _formattedPlace =>
+      '${motel.distance.toKmString} - ${motel.neighborhood}';
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,7 +44,7 @@ class MotelItem extends StatelessWidget {
                       style: context.textTheme.headlineSmall,
                     ),
                     Text(
-                      '${motel.distance}km - ${motel.neighborhood}',
+                      _formattedPlace,
                       style: context.textTheme.bodyMedium?.copyWith(
                         color: context.colorScheme.surfaceContainerHighest,
                       ),
@@ -49,10 +52,14 @@ class MotelItem extends StatelessWidget {
                   ],
                 ),
               ),
-              Icon(
-                Icons.favorite,
-                color: context.colorScheme.surfaceContainerLow,
-                size: 32,
+              InkWell(
+                onTap: () => AppSnackbar.pending(context),
+                borderRadius: BorderRadius.circular(32),
+                child: Icon(
+                  Icons.favorite,
+                  color: context.colorScheme.surfaceContainerLow,
+                  size: 32,
+                ),
               ),
             ],
           ),

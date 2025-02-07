@@ -5,4 +5,9 @@ extension DoubleExtension on double {
     final formatter = NumberFormat.currency(locale: 'pt_BR', symbol: r'R$');
     return formatter.format(this);
   }
+
+  String get toKmString {
+    final formattedValue = toString().replaceAll('.', ',');
+    return '${formattedValue}km';
+  }
 }

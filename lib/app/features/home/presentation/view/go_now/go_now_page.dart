@@ -21,25 +21,31 @@ class _GoNowPageState extends State<GoNowPage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => _cubit,
-      child: BlocBuilder<GoNowCubit, GoNowState>(
-        builder: (context, state) => switch (state) {
-          GoNowLoaded(:final motelData) => Column(
-              children: [
-                const FilterRow(),
-                const Divider(height: 1),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: motelData.motels.map(MotelItem.new).toList(),
+      child: RefreshIndicator(
+        onRefresh: _cubit.fetchHomeMotels,
+        child: Column(
+          children: [
+            const FilterRow(),
+            const Divider(height: 1),
+            Expanded(
+              child: BlocBuilder<GoNowCubit, GoNowState>(
+                builder: (context, state) => switch (state) {
+                  GoNowLoaded(:final motelData) => SingleChildScrollView(
+                      child: Column(
+                        children: motelData.motels.map(MotelItem.new).toList(),
+                      ),
                     ),
-                  ),
-                ),
-              ],
+                  GoNowError(:final message) => Center(
+                      child: Text(message),
+                    ),
+                  _ => const Center(
+                      child: CircularProgressIndicator(),
+                    )
+                },
+              ),
             ),
-          _ => const Center(
-              child: CircularProgressIndicator(),
-            )
-        },
+          ],
+        ),
       ),
     );
   }

@@ -9,6 +9,7 @@ class GoNowCubit extends Cubit<GoNowState> {
   final FetchMotelsUsecase _fetchMotelsUsecase;
 
   Future<void> fetchHomeMotels() async {
+    emit(const GoNowLoading());
     final result = await _fetchMotelsUsecase();
 
     return result.fold(

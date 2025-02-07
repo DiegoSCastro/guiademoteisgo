@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:guiademoteisgo/app/app.dart';
+import 'package:guiademoteisgo/app/widgets/button/select_button.dart';
 
 class FilterRow extends StatefulWidget {
   const FilterRow({super.key});
@@ -26,33 +27,34 @@ class _$FilterRowState extends State<FilterRow> {
             ),
             color: context.theme.scaffoldBackgroundColor,
           ),
-          child: SingleChildScrollView(
+          child: const SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               spacing: 8,
               children: [
-                const SizedBox(width: 16),
-                FilledButton(
-                  onPressed: () {},
-                  child: const Text('com desconto'),
+                SizedBox(width: 16),
+                SelectButton(
+                  label: 'com desconto',
                 ),
-                FilledButton(
-                  onPressed: () {},
-                  child: const Text('disponíveis'),
+                SelectButton(
+                  label: 'disponíveis',
                 ),
-                FilledButton(
-                  onPressed: () {},
-                  child: const Text('hidro'),
+                SelectButton(
+                  label: 'hidro',
                 ),
-                FilledButton(
-                  onPressed: () {},
-                  child: const Text('piscina'),
+                SelectButton(
+                  label: 'piscina',
                 ),
-                FilledButton(
-                  onPressed: () {},
-                  child: const Text('sauna'),
+                SelectButton(
+                  label: 'sauna',
                 ),
-                const SizedBox(width: 16),
+                SelectButton(
+                  label: 'com desconto',
+                ),
+                SelectButton(
+                  label: 'com desconto',
+                ),
+                SizedBox(width: 16),
               ],
             ),
           ),
