@@ -10,6 +10,7 @@ sealed class AppColors {
   static const gray = Color(0xFFC2C2C2);
   static const darkGray = Color(0xFFA0A2A4);
   static const darkestGray = Color(0xFF48494B);
+  static const splashColor = Color(0xFFCD0F14);
 
   ///  Success
   static const Color success = Color(0xFF00C98C);

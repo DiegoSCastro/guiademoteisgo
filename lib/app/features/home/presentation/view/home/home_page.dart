@@ -45,6 +45,21 @@ class _HomePageState extends State<HomePage> {
           onTapNow: () => context.go(AppRoutes.goNowPath),
           onTapLater: () => context.go(AppRoutes.goLaterPath),
         ),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(40),
+          child: Center(
+            child: Column(
+              children: [
+                Text(
+                  'minha localização',
+                  style: context.textTheme.bodySmall
+                      ?.copyWith(color: context.colorScheme.surface),
+                ),
+                const SizedBox(height: 16),
+              ],
+            ),
+          ),
+        ),
       ),
       drawer: const AppDrawer(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

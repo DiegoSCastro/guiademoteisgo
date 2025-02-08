@@ -32,11 +32,6 @@ dev_dependencies:
     sdk: flutter
   json_serializable: ^6.9.3
 
-# flutter_icons:
-#   android: true
-#   ios: true
-#   image_path: "assets/png/icon.png"
-
 flutter_icons:
   android: true
   ios: true
@@ -59,3 +54,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/png/
+
+  fonts:
+    - family: CronosPro
+      fonts:
+        - asset: assets/fonts/Cronos-Pro.ttf
