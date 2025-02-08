@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:guiademoteisgo/app/app.dart';
 
-class ThemeConfig {
-  ThemeConfig._();
-
+sealed class ThemeConfig {
   static final theme = ThemeData(
     useMaterial3: true,
     appBarTheme: const AppBarTheme(
