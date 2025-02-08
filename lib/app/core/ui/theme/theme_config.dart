@@ -6,14 +6,6 @@ class ThemeConfig {
 
   static final theme = ThemeData(
     useMaterial3: true,
-    segmentedButtonTheme: SegmentedButtonThemeData(
-      style: SegmentedButton.styleFrom(
-        foregroundColor: AppColors.white,
-        backgroundColor: AppColors.primaryDark,
-        selectedBackgroundColor: AppColors.white,
-        selectedForegroundColor: AppColors.black,
-      ),
-    ),
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.white,
       foregroundColor: AppColors.darkestGray,
