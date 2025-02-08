@@ -68,71 +68,27 @@ class AppDrawer extends StatelessWidget {
               ),
             ),
           ),
-          const _DrawerOptionButton(
+          const DrawerOptionButton(
             icon: Icons.person_outline_rounded,
             label: 'login',
           ),
-          const _DrawerOptionButton(
+          const DrawerOptionButton(
             icon: Icons.data_saver_on,
             label: 'ajuda',
           ),
-          const _DrawerOptionButton(
+          const DrawerOptionButton(
             icon: Icons.settings_outlined,
             label: 'configurações',
           ),
-          const _DrawerOptionButton(
+          const DrawerOptionButton(
             icon: Icons.bug_report_outlined,
             label: 'comunicar problema',
           ),
-          const _DrawerOptionButton(
+          const DrawerOptionButton(
             icon: Icons.campaign_outlined,
             label: 'tem um motel? faça parte',
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _DrawerOptionButton extends StatelessWidget {
-  const _DrawerOptionButton({
-    required this.icon,
-    required this.label,
-    this.onTap,
-  });
-  final IconData icon;
-  final String label;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap ??
-          () {
-            context.pop();
-            AppSnackbar.pending(context);
-          },
-      child: DecoratedBox(
-        decoration: BoxDecoration(color: context.theme.cardColor),
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Row(
-            spacing: 8,
-            children: [
-              Icon(icon),
-              Expanded(
-                child: Text(
-                  label,
-                  style: context.textTheme.bodyMedium,
-                ),
-              ),
-              const Icon(
-                Icons.arrow_forward_ios_rounded,
-                size: 12,
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
