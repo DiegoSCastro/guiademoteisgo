@@ -11,7 +11,7 @@ class MotelGuideApp extends StatelessWidget {
       title: 'Guia de Moteis Go',
       debugShowCheckedModeBanner: false,
       theme: ThemeConfig.theme,
-      routerConfig: AppRoutes.router,
+      routerConfig: AppRoutes.createRouter(),
     );
   }
 }

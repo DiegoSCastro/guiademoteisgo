@@ -7,35 +7,37 @@ sealed class AppRoutes {
   static const goLaterPath = '/go_later';
   static const multiImageViewPath = '/multi_image_view';
 
-  static GoRouter router = GoRouter(
-    initialLocation: splashPath,
-    routes: [
-      GoRoute(
-        path: splashPath,
-        builder: (context, state) => const SplashPage(),
-      ),
-      GoRoute(
-        path: multiImageViewPath,
-        builder: (context, state) => MultiImageViewPage(
-          suite: state.extra! as Suite,
+  static GoRouter createRouter([String? initialLocation]) {
+    return GoRouter(
+      initialLocation: initialLocation ?? splashPath,
+      routes: [
+        GoRoute(
+          path: splashPath,
+          builder: (context, state) => const SplashPage(),
         ),
-      ),
-      ShellRoute(
-        builder: (context, state, child) => HomePage(
-          state: state,
-          child: child,
+        GoRoute(
+          path: multiImageViewPath,
+          builder: (context, state) => MultiImageViewPage(
+            suite: state.extra! as Suite,
+          ),
         ),
-        routes: [
-          GoRoute(
-            path: goNowPath,
-            builder: (context, state) => const GoNowPage(),
+        ShellRoute(
+          builder: (context, state, child) => HomePage(
+            state: state,
+            child: child,
           ),
-          GoRoute(
-            path: goLaterPath,
-            builder: (context, state) => const GoLaterPage(),
-          ),
-        ],
-      ),
-    ],
-  );
+          routes: [
+            GoRoute(
+              path: goNowPath,
+              builder: (context, state) => const GoNowPage(),
+            ),
+            GoRoute(
+              path: goLaterPath,
+              builder: (context, state) => const GoLaterPage(),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 }
