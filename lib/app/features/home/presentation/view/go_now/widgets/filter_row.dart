@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:guiademoteisgo/app/app.dart';
-import 'package:guiademoteisgo/app/widgets/button/select_button.dart';
 
 class FilterRow extends StatefulWidget {
   const FilterRow({super.key});
