@@ -12,7 +12,7 @@ void main() {
   });
 
   group('AppDrawer Widget Tests', () {
-    testWidgets('_DrawerOptionButton com onTap personalizado chama onTap',
+    testWidgets('DrawerOptionButton com onTap personalizado chama onTap',
         (WidgetTester tester) async {
       var tapped = false;
       await tester.pumpWidget(
@@ -36,7 +36,7 @@ void main() {
     });
 
     testWidgets(
-        '_DrawerOptionButton, sem onTap fornecido, executa fallback chamando context.pop() sem erro',
+        'DrawerOptionButton, sem onTap fornecido, executa fallback chamando context.pop() sem erro',
         (WidgetTester tester) async {
       final router = GoRouter(
         initialLocation: '/dummy',
