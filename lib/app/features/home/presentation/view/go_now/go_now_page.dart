@@ -38,9 +38,7 @@ class _GoNowPageState extends State<GoNowPage> {
                   GoNowError(:final message) => Center(
                       child: Text(message),
                     ),
-                  _ => const Center(
-                      child: CircularProgressIndicator(),
-                    )
+                  _ => const GoNowPageLoader(),
                 },
               ),
             ),
