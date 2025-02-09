@@ -16,14 +16,12 @@ API: https://www.jsonkeeper.com/b/1IXK
 1. **Clone o repositório:**  
     Clone o repositório em sua maquina local.
     ```bash
-    git clone <URL-do-repositório>
+    git clone https://github.com/DiegoSCastro/guiademoteisgo
 
 2. **Instalar dependências:**  
     Abra o projeto e digite o seguinte comando no terminal para instalar as dependências:
     ```bash
-    flutter pub get
-
-   
+    flutter pub get   
 
 3. **Rodar testes:**  
    Para rodar os testes automatizados com coverage use o comando:
@@ -52,6 +50,7 @@ Dica: Se estiver utilizando o VSCode, pode ser útil instalar a extensão Flutte
 
 - **Testes unitários e de Widget:**  
     Foram implementados testes unitários e de widget utilizando as bibliotecas `flutter_test` e `mocktail`. Atualmente, o projeto possui 93% de cobertura de testes.
+    <img width="480" alt="Image" src="https://github.com/user-attachments/assets/517909d7-5476-4fe0-9de3-97dae8ab760b" />
 
 - **Injeção de dependencias:**  
     Foi utilizado o `get_it` para injeção de dependências, tornando o código mais modular e facilitando os testes.
