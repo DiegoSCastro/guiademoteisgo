@@ -33,7 +33,7 @@ Dica: Se estiver utilizando o VSCode, pode ser útil instalar a extensão Flutte
 
 4. **Rodar o app:**  
     Para rodar o aplicativo em um dispositivo Android (como usuário ou testador/QA), baixe e instale o APK disponível no link abaixo:
-    
+    https://drive.google.com/file/d/1MpcBfIVICYHXd9zoQ4eLSVZWRaIkfbmw/view?usp=sharing
 
 ### Princiais Features:
 
