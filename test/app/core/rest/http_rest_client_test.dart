@@ -54,7 +54,6 @@ void main() {
 
       final postBody = {'key': 'value'};
 
-      // Chama o método POST.
       final result = await client.post('$baseUrl/test-post', body: postBody);
 
       expect(result, isA<Map<String, dynamic>>());

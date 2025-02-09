@@ -4,10 +4,8 @@ import 'package:guiademoteisgo/app/app.dart';
 part 'motel_model.freezed.dart';
 part 'motel_model.g.dart';
 
-///MotelModel Model
 @freezed
 class MotelModel with _$MotelModel {
-  /// Constructor of [MotelModel]
   const factory MotelModel({
     @JsonKey(name: 'fantasia') required String name,
     @JsonKey(name: 'logo') required String logo,
@@ -20,7 +18,6 @@ class MotelModel with _$MotelModel {
   }) = _MotelModel;
   const MotelModel._();
 
-  /// Convert json [Map] in a [MotelModel]
   factory MotelModel.fromJson(Map<String, dynamic> json) =>
       _$MotelModelFromJson(json);
 

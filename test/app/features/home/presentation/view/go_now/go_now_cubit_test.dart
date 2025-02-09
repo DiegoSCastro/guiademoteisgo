@@ -26,7 +26,6 @@ void main() {
       final cubit = GoNowCubit(fetchMotelsUsecase: mockFetch);
       final emittedStates = <GoNowState>[];
 
-      // Escuta os estados emitidos.
       final subscription = cubit.stream.listen(emittedStates.add);
 
       await cubit.fetchHomeMotels();

@@ -59,6 +59,9 @@ Dica: Se estiver utilizando o VSCode, pode ser útil instalar a extensão Flutte
 - **Gerenciamento de estado:**  
     O gerenciamento de estado foi realizado com `Bloc/Cubit`, simplificando o controle da reatividade das telas.
 
+- **fpdart:**  
+    Utilizado para programação funcional, permitindo o uso de tipos como `Left` e `Right` para representar resultados e erros de forma elegante e segura.
+
 - **Serialização:**  
     Utilizamos o `Freezed` para uma serialização eficiente dos dados retornados pela API.
 

@@ -1,5 +1,3 @@
-// ignore_for_file: omit_local_variable_types
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guiademoteisgo/app/app.dart';

@@ -44,7 +44,6 @@ void main() {
       expect(AppColors.splashColor, equals(const Color(0xFFCD0F14)));
     });
 
-    // Cores para Warning
     test('warning should be Color(0xFFFFB600)', () {
       expect(AppColors.warning, equals(const Color(0xFFFFB600)));
     });

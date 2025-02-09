@@ -63,7 +63,6 @@ void main() {
     testWidgets('Deve retornar a altura correta', (WidgetTester tester) async {
       await tester.pumpWidget(app);
 
-      // Define um tamanho de tela para o teste
       tester.view.physicalSize = const Size(800, 400);
       tester.view.devicePixelRatio = 1.0;
 

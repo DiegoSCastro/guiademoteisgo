@@ -4,10 +4,8 @@ import 'package:guiademoteisgo/app/app.dart';
 part 'period_model.freezed.dart';
 part 'period_model.g.dart';
 
-///PeriodModel Model
 @freezed
 class PeriodModel with _$PeriodModel {
-  /// Constructor of [PeriodModel]
   const factory PeriodModel({
     @JsonKey(name: 'tempoFormatado') required String formattedTime,
     @JsonKey(name: 'tempo') required String time,
@@ -18,7 +16,6 @@ class PeriodModel with _$PeriodModel {
   }) = _PeriodModel;
   const PeriodModel._();
 
-  /// Convert json [Map] in a [PeriodModel]
   factory PeriodModel.fromJson(Map<String, dynamic> json) =>
       _$PeriodModelFromJson(json);
 

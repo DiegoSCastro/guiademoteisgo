@@ -4,10 +4,13 @@ analyzer:
     - lib/**.freezed.dart
 
   errors:
+    avoid_dynamic_calls: ignore
     invalid_annotation_target: ignore
     lines_longer_than_80_chars: ignore
+    omit_local_variable_types: ignore
     one_member_abstracts: ignore
     public_member_api_docs: ignore
+    unawaited_futures: ignore
     unused_element: ignore
 
 include: package:flutter_lints/flutter.yaml

@@ -4,10 +4,8 @@ import 'package:guiademoteisgo/app/app.dart';
 part 'suite_model.freezed.dart';
 part 'suite_model.g.dart';
 
-///SuiteModel Model
 @freezed
 class SuiteModel with _$SuiteModel {
-  /// Constructor of [SuiteModel]
   const factory SuiteModel({
     @JsonKey(name: 'nome') required String name,
     @JsonKey(name: 'qtd') required int quantity,
@@ -20,7 +18,6 @@ class SuiteModel with _$SuiteModel {
   }) = _SuiteModel;
   const SuiteModel._();
 
-  /// Convert json [Map] in a [SuiteModel]
   factory SuiteModel.fromJson(Map<String, dynamic> json) =>
       _$SuiteModelFromJson(json);
 
