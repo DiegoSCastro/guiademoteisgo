@@ -1,6 +1,6 @@
 # Avaliação - Guia de motéis Go
 
-###Adicionar image
+![Image](https://github.com/user-attachments/assets/86fb984b-bde5-4cd9-948a-aed5ffac0911)
 
 **Guia de motéis Go** é uma aplicação desenvolvida para avaliação de Diego de Souza Castro, para a empresa Guia de Moteis.
 
@@ -50,7 +50,7 @@ Dica: Se estiver utilizando o VSCode, pode ser útil instalar a extensão Flutte
 
 - **Testes unitários e de Widget:**  
     Foram implementados testes unitários e de widget utilizando as bibliotecas `flutter_test` e `mocktail`. Atualmente, o projeto possui 93% de cobertura de testes.
-    <img width="480" alt="Image" src="https://github.com/user-attachments/assets/517909d7-5476-4fe0-9de3-97dae8ab760b" />
+    <img width="547" alt="Image" src="https://github.com/user-attachments/assets/17c13b42-ac4e-4abc-b4ec-f409a6552fcb" />
 
 - **Injeção de dependencias:**  
     Foi utilizado o `get_it` para injeção de dependências, tornando o código mais modular e facilitando os testes.
